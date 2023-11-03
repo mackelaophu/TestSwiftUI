@@ -23,7 +23,6 @@ struct ListPageView: View {
                     }
                 }
             }.navigationTitle("More")
-                .navigationBarTitleDisplayMode(.automatic)
         }
     }
 
