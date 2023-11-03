@@ -29,14 +29,14 @@ struct ListPageView: View {
 
     func getDestination(pageId: Navigationpage,groupID: NavigationGroup) ->some View {
         switch (groupID,pageId){
-        case (.navigationApp,.story): return AnyView(HomeView())
-        case (.navigationApp,.datePlanner): return AnyView(FavoriteView())
-        case (.presentingApp,.grids): return AnyView(StoryView())
-        case (.presentingApp,.editGrid): return AnyView(FunFactView())
-        case (.presentingApp,.imageGallary): return AnyView(HomeView())
-        case (.presentingApp,.layoutView): return AnyView(HomeView())
+        case (.navigationApp,.story): return AnyView(NoDataView())
+        case (.navigationApp,.datePlanner): return AnyView(NoDataView())
+        case (.presentingApp,.grids): return AnyView(NoDataView())
+        case (.presentingApp,.editGrid): return AnyView(NoDataView())
+        case (.presentingApp,.imageGallary): return AnyView(NoDataView())
+        case (.presentingApp,.layoutView): return AnyView(NoDataView())
         default:
-            return AnyView(HomeView())
+            return AnyView(NoDataView())
         }
     }
 }
