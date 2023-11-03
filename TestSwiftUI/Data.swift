@@ -39,26 +39,26 @@ let information = Info(
 // MARK: - list function
 struct Page : Hashable {
     let name: String
-    let id: Int
+    let pageType : Navigationpage
 }
 
 struct PageGroup : Hashable {
     let name:String
-    let id: Int
     let pages: [Page]
+    let groupType: NavigationGroup
 }
 struct GroupPages : Hashable {
     let group: [PageGroup]
 }
 
 let groupPages =  GroupPages(group: [PageGroup(name: "Navigation App",
-                                               id: 0,
-                                               pages: [Page(name: "Choose your Own Story", id: 0),
-                                                       Page(name: "Date Planner", id: 1)]),
+                                               pages: [Page(name: "Choose your Own Story", pageType: .story),
+                                                       Page(name: "Date Planner", pageType: .datePlanner)],
+                                               groupType: .navigationApp),
                                      PageGroup(name: "Presenting Content",
-                                               id: 1,
-                                               pages: [Page(name: "Organizing With Grid", id: 0),
-                                                       Page(name: "Editing Grids", id: 1),
-                                                       Page(name: "Image Gallary", id: 2),
-                                                       Page(name: "Layouting out Views", id: 3),
-                                                      ])])
+                                               pages: [Page(name: "Organizing With Grid", pageType: .grids),
+                                                       Page(name: "Editing Grids", pageType: .editGrid),
+                                                       Page(name: "Image Gallary", pageType: .imageGallary),
+                                                       Page(name: "Layouting out Views", pageType: .layoutView),
+                                                      ],
+                                               groupType: .presentingApp)])

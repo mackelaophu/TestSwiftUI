@@ -14,7 +14,7 @@ struct ListPageView: View {
                 ForEach(groupPages.group, id: \.self){ group in
                     Section {
                         ForEach(group.pages, id: \.self) { page in
-                            NavigationLink(destination: getDestination(pageId: page.id, groupID: group.id)){
+                            NavigationLink(destination: getDestination(pageId: page.pageType, groupID: group.groupType)){
                                 Text(page.name)
                             }
                         }
@@ -26,16 +26,17 @@ struct ListPageView: View {
                 .navigationBarTitleDisplayMode(.automatic)
         }
     }
-    func getDestination(pageId: Int,groupID: Int) ->some View {
+
+    func getDestination(pageId: Navigationpage,groupID: NavigationGroup) ->some View {
         switch (groupID,pageId){
-        case (0,0): return HomeView()
-        case (0,1): return HomeView()
-        case (1,0): return HomeView()
-        case (1,1): return HomeView()
-        case (1,2): return HomeView()
-        case (1,3): return HomeView()
+        case (.navigationApp,.story): return AnyView(HomeView())
+        case (.navigationApp,.datePlanner): return AnyView(FavoriteView())
+        case (.presentingApp,.grids): return AnyView(StoryView())
+        case (.presentingApp,.editGrid): return AnyView(FunFactView())
+        case (.presentingApp,.imageGallary): return AnyView(HomeView())
+        case (.presentingApp,.layoutView): return AnyView(HomeView())
         default:
-            return HomeView()
+            return AnyView(HomeView())
         }
     }
 }
