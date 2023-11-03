@@ -113,14 +113,9 @@
 			children = (
 				3AEA9DA62AF48819004E2FE1 /* TestSwiftUIApp.swift */,
 				3AEA9DA82AF48819004E2FE1 /* ContentView.swift */,
-				3ADD45DB2AF4EA90006FF4AC /* NoDataView.swift */,
-				3AEA9DD12AF49213004E2FE1 /* HomeView.swift */,
-				3AEA9DD92AF49437004E2FE1 /* Data.swift */,
-				3ADD45D72AF4D6F3006FF4AC /* ListPageView.swift */,
-				3ADD45D92AF4E41C006FF4AC /* NavigationEnum.swift */,
-				3AEA9DD32AF4923D004E2FE1 /* FunFactView.swift */,
-				3AEA9DD52AF49252004E2FE1 /* StoryView.swift */,
-				3AEA9DD72AF4925F004E2FE1 /* FavoriteView.swift */,
+				3D1C018F2AF5B6DF0083FC20 /* more */,
+				3D1C01952AF5B7520083FC20 /* main */,
+				3D1C01962AF5B7690083FC20 /* model */,
 				3AEA9DAA2AF4881A004E2FE1 /* Assets.xcassets */,
 				3AEA9DAC2AF4881A004E2FE1 /* TestSwiftUI.entitlements */,
 				3AEA9DAD2AF4881A004E2FE1 /* Preview Content */,
@@ -151,6 +146,75 @@
 				3AEA9DC42AF4881A004E2FE1 /* TestSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = TestSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		3D1C018F2AF5B6DF0083FC20 /* more */ = {
+			isa = PBXGroup;
+			children = (
+				3D1C01942AF5B72B0083FC20 /* LayingOutView */,
+				3D1C01932AF5B71D0083FC20 /* ImageGallary */,
+				3D1C01922AF5B70F0083FC20 /* EditingGrid */,
+				3D1C01912AF5B6FF0083FC20 /* OrganizingWithGrid */,
+				3D1C01902AF5B6EF0083FC20 /* DatePlanner */,
+			);
+			path = more;
+			sourceTree = "<group>";
+		};
+		3D1C01902AF5B6EF0083FC20 /* DatePlanner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatePlanner;
+			sourceTree = "<group>";
+		};
+		3D1C01912AF5B6FF0083FC20 /* OrganizingWithGrid */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OrganizingWithGrid;
+			sourceTree = "<group>";
+		};
+		3D1C01922AF5B70F0083FC20 /* EditingGrid */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EditingGrid;
+			sourceTree = "<group>";
+		};
+		3D1C01932AF5B71D0083FC20 /* ImageGallary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageGallary;
+			sourceTree = "<group>";
+		};
+		3D1C01942AF5B72B0083FC20 /* LayingOutView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LayingOutView;
+			sourceTree = "<group>";
+		};
+		3D1C01952AF5B7520083FC20 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				3ADD45DB2AF4EA90006FF4AC /* NoDataView.swift */,
+				3AEA9DD12AF49213004E2FE1 /* HomeView.swift */,
+				3ADD45D72AF4D6F3006FF4AC /* ListPageView.swift */,
+				3AEA9DD32AF4923D004E2FE1 /* FunFactView.swift */,
+				3AEA9DD52AF49252004E2FE1 /* StoryView.swift */,
+				3AEA9DD72AF4925F004E2FE1 /* FavoriteView.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		3D1C01962AF5B7690083FC20 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA9DD92AF49437004E2FE1 /* Data.swift */,
+				3ADD45D92AF4E41C006FF4AC /* NavigationEnum.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
