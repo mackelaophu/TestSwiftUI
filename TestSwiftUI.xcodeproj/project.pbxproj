@@ -22,6 +22,14 @@
 		3AEA9DD62AF49252004E2FE1 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA9DD52AF49252004E2FE1 /* StoryView.swift */; };
 		3AEA9DD82AF4925F004E2FE1 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA9DD72AF4925F004E2FE1 /* FavoriteView.swift */; };
 		3AEA9DDA2AF49437004E2FE1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA9DD92AF49437004E2FE1 /* Data.swift */; };
+		3DB9853F2AF6643700E8FD1E /* EventTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB9853B2AF6643600E8FD1E /* EventTask.swift */; };
+		3DB985402AF6643700E8FD1E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB9853C2AF6643700E8FD1E /* Event.swift */; };
+		3DB985412AF6643700E8FD1E /* ColorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB9853D2AF6643700E8FD1E /* ColorOptions.swift */; };
+		3DB985422AF6643700E8FD1E /* EventSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB9853E2AF6643700E8FD1E /* EventSymbols.swift */; };
+		3DB985452AF67E9E00E8FD1E /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB985442AF67E9E00E8FD1E /* EventData.swift */; };
+		3DB985472AF67EE300E8FD1E /* DatePlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB985462AF67EE300E8FD1E /* DatePlannerView.swift */; };
+		3DB985492AF694C500E8FD1E /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB985482AF694C500E8FD1E /* EventRow.swift */; };
+		3DB9854B2AF694DD00E8FD1E /* CustomLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB9854A2AF694DD00E8FD1E /* CustomLabelStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +69,14 @@
 		3AEA9DD52AF49252004E2FE1 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		3AEA9DD72AF4925F004E2FE1 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		3AEA9DD92AF49437004E2FE1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		3DB9853B2AF6643600E8FD1E /* EventTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTask.swift; sourceTree = "<group>"; };
+		3DB9853C2AF6643700E8FD1E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		3DB9853D2AF6643700E8FD1E /* ColorOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorOptions.swift; sourceTree = "<group>"; };
+		3DB9853E2AF6643700E8FD1E /* EventSymbols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSymbols.swift; sourceTree = "<group>"; };
+		3DB985442AF67E9E00E8FD1E /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		3DB985462AF67EE300E8FD1E /* DatePlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlannerView.swift; sourceTree = "<group>"; };
+		3DB985482AF694C500E8FD1E /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		3DB9854A2AF694DD00E8FD1E /* CustomLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +179,7 @@
 		3D1C01902AF5B6EF0083FC20 /* DatePlanner */ = {
 			isa = PBXGroup;
 			children = (
+				3DB985432AF67D8900E8FD1E /* views */,
 				3D1C01972AF607FE0083FC20 /* model */,
 			);
 			path = DatePlanner;
@@ -221,8 +238,23 @@
 		3D1C01972AF607FE0083FC20 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3DB9853D2AF6643700E8FD1E /* ColorOptions.swift */,
+				3DB985442AF67E9E00E8FD1E /* EventData.swift */,
+				3DB9853C2AF6643700E8FD1E /* Event.swift */,
+				3DB9853E2AF6643700E8FD1E /* EventSymbols.swift */,
+				3DB9853B2AF6643600E8FD1E /* EventTask.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		3DB985432AF67D8900E8FD1E /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3DB985462AF67EE300E8FD1E /* DatePlannerView.swift */,
+				3DB9854A2AF694DD00E8FD1E /* CustomLabelStyle.swift */,
+				3DB985482AF694C500E8FD1E /* EventRow.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,16 +387,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB985422AF6643700E8FD1E /* EventSymbols.swift in Sources */,
 				3AEA9DDA2AF49437004E2FE1 /* Data.swift in Sources */,
+				3DB985452AF67E9E00E8FD1E /* EventData.swift in Sources */,
 				3ADD45D82AF4D6F3006FF4AC /* ListPageView.swift in Sources */,
 				3AEA9DD62AF49252004E2FE1 /* StoryView.swift in Sources */,
 				3ADD45DA2AF4E41C006FF4AC /* NavigationEnum.swift in Sources */,
+				3DB985402AF6643700E8FD1E /* Event.swift in Sources */,
 				3AEA9DD22AF49213004E2FE1 /* HomeView.swift in Sources */,
+				3DB985412AF6643700E8FD1E /* ColorOptions.swift in Sources */,
+				3DB9854B2AF694DD00E8FD1E /* CustomLabelStyle.swift in Sources */,
+				3DB985472AF67EE300E8FD1E /* DatePlannerView.swift in Sources */,
 				3ADD45DC2AF4EA90006FF4AC /* NoDataView.swift in Sources */,
+				3DB9853F2AF6643700E8FD1E /* EventTask.swift in Sources */,
 				3AEA9DA92AF48819004E2FE1 /* ContentView.swift in Sources */,
 				3AEA9DD42AF4923D004E2FE1 /* FunFactView.swift in Sources */,
 				3AEA9DD82AF4925F004E2FE1 /* FavoriteView.swift in Sources */,
 				3AEA9DA72AF48819004E2FE1 /* TestSwiftUIApp.swift in Sources */,
+				3DB985492AF694C500E8FD1E /* EventRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
