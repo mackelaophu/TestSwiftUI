@@ -163,6 +163,7 @@
 		3D1C01902AF5B6EF0083FC20 /* DatePlanner */ = {
 			isa = PBXGroup;
 			children = (
+				3D1C01972AF607FE0083FC20 /* model */,
 			);
 			path = DatePlanner;
 			sourceTree = "<group>";
@@ -213,6 +214,13 @@
 			children = (
 				3AEA9DD92AF49437004E2FE1 /* Data.swift */,
 				3ADD45D92AF4E41C006FF4AC /* NavigationEnum.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		3D1C01972AF607FE0083FC20 /* model */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = model;
 			sourceTree = "<group>";
