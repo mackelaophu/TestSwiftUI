@@ -14,46 +14,37 @@ struct DatePlannerView : View {
     
     @State private var selection: Event?
     var body: some View {
-        NavigationSplitView{
-            List(selection: $selection){
-                ForEach(Period.allCases){ period in
-                    Section(content: {
-                        ForEach(eventData.sortedEvents(period: period)) { $event in
+        List{
+            ForEach(Period.allCases){period in
+                Section(content: {
+                    ForEach(eventData.events, id: \.self){event in
+                        NavigationLink(destination: NoDataView(hidderBar: false), label: {
                             EventRow(event: event)
-                                .tag(event)
-                                .swipeActions {
-                                    Button(role: .destructive) {
-                                        selection = nil
-                                        eventData.delete(event)
-                                    } label: {
-                                        Label("Delete", systemImage: "trash")
-                                    }
-                                }
-                        }
-                    },header: {
-                        Text(period.name).font(.callout)
-                            .foregroundColor(.secondary)
-                            .fontWeight(.bold)
-                    }).disabled(eventData.sortedEvents(period: period).isEmpty)
-                }
-            }
-        } detail: {
-           
-        }.toolbar{
-            ToolbarItem{
-                Button {
-                    
-                } label: {
-                    Image(systemName: "plus")
-                }
+                        })
+                    }
+                },header: {
+                    Text(period.name)
+                })
             }
         }.navigationTitle("Date Planner")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem{
+                    Button{
+                        
+                    }label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+
     }
 }
 
 struct DatePlannerView_preview : PreviewProvider {
     static var previews: some View {
-        DatePlannerView(eventData: EventData())
+        NavigationView{
+            DatePlannerView(eventData: EventData())
+        }
     }
 }

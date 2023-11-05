@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NoDataView: View {
+    @State var hidderBar : Bool
     var body: some View {
         VStack{
             Image(systemName: "questionmark.folder.ar")
@@ -18,11 +19,12 @@ struct NoDataView: View {
                 .font(.title2)
         }.navigationTitle("NoData")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(hidderBar)
     }
 }
 
 struct NoDataView_Previews: PreviewProvider {
     static var previews: some View {
-        NoDataView()
+        NoDataView(hidderBar: true)
     }
 }
