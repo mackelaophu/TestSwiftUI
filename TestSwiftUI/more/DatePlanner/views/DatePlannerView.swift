@@ -17,10 +17,12 @@ struct DatePlannerView : View {
         List{
             ForEach(Period.allCases){period in
                 Section(content: {
-                    ForEach(eventData.events, id: \.self){event in
-                        NavigationLink(destination: NoDataView(), label: {
+                    ForEach(eventData.sortedEvents(period: period), id: \.self){$event in
+                        NavigationLink{
+                            NoDataView()
+                        } label:{
                             EventRow(event: event)
-                        })
+                        }
                     }
                 },header: {
                     Text(period.name)
@@ -30,12 +32,18 @@ struct DatePlannerView : View {
             .toolbar{
                 ToolbarItem{
                     Button{
-                        
+                        isAddingNewEvent = true
+                        newEvent = Event()
                     }label: {
                         Image(systemName: "plus")
                     }
                 }
             }
+            .sheet(isPresented: $isAddingNewEvent, content: {
+                NavigationView{
+                    NoDataView()
+                }
+            })
         
     }
 }
