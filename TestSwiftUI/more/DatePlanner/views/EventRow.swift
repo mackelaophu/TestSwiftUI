@@ -8,8 +8,6 @@ import SwiftUI
 
 struct EventRow: View {
     
-    @ScaledMetric var imageWidth: CGFloat = 40
-    
     let event: Event
     
     var body: some View {

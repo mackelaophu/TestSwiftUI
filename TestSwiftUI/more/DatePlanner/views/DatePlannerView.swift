@@ -18,7 +18,7 @@ struct DatePlannerView : View {
             ForEach(Period.allCases){period in
                 Section(content: {
                     ForEach(eventData.events, id: \.self){event in
-                        NavigationLink(destination: NoDataView(hidderBar: false), label: {
+                        NavigationLink(destination: NoDataView(), label: {
                             EventRow(event: event)
                         })
                     }
@@ -27,7 +27,6 @@ struct DatePlannerView : View {
                 })
             }
         }.navigationTitle("Date Planner")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem{
                     Button{
@@ -37,7 +36,7 @@ struct DatePlannerView : View {
                     }
                 }
             }
-
+        
     }
 }
 
