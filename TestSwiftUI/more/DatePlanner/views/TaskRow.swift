@@ -31,6 +31,13 @@ struct TaskRow: View {
             } else {
                 Text(task.text)
             }
+            Spacer()
+        }
+        .padding(.vertical, 10)
+        .task {
+            if task.isNew {
+                isFocused = true
+            }
         }
     }
 }
