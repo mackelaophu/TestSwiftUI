@@ -22,12 +22,12 @@ struct EventEditorView: View {
                             Text("New Task")
                                 .font(.title)
                                 .fontWeight(.semibold)
-                        }
+                        }.listRowSeparator(.hidden)
                     }
                     DatePicker("test", selection: $event.date)
                         .labelsHidden()
                     ForEach($event.tasks , id: \.self) {$task in
-                        TaskRow(task: $task)
+                        TaskRow(task: $task, isEditing: isNew)
                     }
                 }
             }

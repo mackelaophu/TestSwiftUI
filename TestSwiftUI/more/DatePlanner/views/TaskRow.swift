@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TaskRow: View {
     @Binding var task: EventTask
+    var isEditing = false
+    
+    @FocusState private var isFocused: Bool
     var body: some View {
         HStack {
             Button {
@@ -17,13 +20,23 @@ struct TaskRow: View {
                 Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
             }
             .buttonStyle(.plain)
-            Text(task.text)
+            if isEditing || task.isNew {
+                TextField("Task description", text: $task.text)
+                    .focused($isFocused)
+                    .onChange(of: isFocused) { newValue in
+                        if newValue == false {
+                            task.isNew = false
+                        }
+                    }
+            } else {
+                Text(task.text)
+            }
         }
     }
 }
 
 struct TaskRow_Previews: PreviewProvider {
     static var previews: some View {
-        TaskRow(task: .constant(EventTask(text: "test")))
+        TaskRow(task: .constant(EventTask(text: "test")), isEditing: true)
     }
 }
