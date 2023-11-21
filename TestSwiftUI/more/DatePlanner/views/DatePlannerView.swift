@@ -19,7 +19,7 @@ struct DatePlannerView : View {
                 Section(content: {
                     ForEach(eventData.sortedEvents(period: period), id: \.self){$event in
                         NavigationLink{
-                            EventEditorView(event: event, isEditting : true)
+                            EventEditor(event: event, isEditting : true)
                         } label:{
                             EventRow(event: event)
                         }
@@ -41,7 +41,7 @@ struct DatePlannerView : View {
             }
             .sheet(isPresented: $isAddingNewEvent, content: {
                 NavigationView{
-                    EventEditorView(event: newEvent, isNew: true, isEditting : false)
+                    EventEditor(event: newEvent, isNew: true, isEditting : false)
                 }
             })
         

@@ -10,7 +10,6 @@ import SwiftUI
 struct TaskRow: View {
     @Binding var task: EventTask
     var isEditing = false
-    
     @FocusState private var isFocused: Bool
     var body: some View {
         HStack {
