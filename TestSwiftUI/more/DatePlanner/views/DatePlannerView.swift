@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DatePlannerView : View {
-    @ObservedObject var eventData: EventData
+    @EnvironmentObject var eventData: EventData
     @State private var isAddingNewEvent = false
     @State private var newEvent = Event()
     
@@ -51,7 +51,7 @@ struct DatePlannerView : View {
 struct DatePlannerView_preview : PreviewProvider {
     static var previews: some View {
         NavigationView{
-            DatePlannerView(eventData: EventData())
+            DatePlannerView().environmentObject(EventData())
         }
     }
 }

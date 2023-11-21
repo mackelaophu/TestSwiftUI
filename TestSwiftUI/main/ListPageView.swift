@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListPageView: View {
+    @StateObject private var eventData = EventData()
     var body: some View {
         NavigationView {
             List {
@@ -29,7 +30,7 @@ struct ListPageView: View {
     func getDestination(pageId: Navigationpage,groupID: NavigationGroup) ->some View {
         switch (groupID,pageId){
         case (.navigationApp,.story): return AnyView(NoDataView())
-        case (.navigationApp,.datePlanner): return AnyView(DatePlannerView(eventData: EventData()))
+        case (.navigationApp,.datePlanner): return AnyView(DatePlannerView().environmentObject(eventData))
         case (.presentingApp,.grids): return AnyView(NoDataView())
         case (.presentingApp,.editGrid): return AnyView(NoDataView())
         case (.presentingApp,.imageGallary): return AnyView(NoDataView())
