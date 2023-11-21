@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EventDetail: View {
-    @State var event: Event
+    @Binding var event: Event
     let isEditting : Bool
     var body: some View {
         List {
@@ -47,6 +47,6 @@ struct EventDetail: View {
 
 struct EventDetail_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetail(event: Event.example, isEditting: true)
+        EventDetail(event: .constant(Event.example), isEditting: true)
     }
 }

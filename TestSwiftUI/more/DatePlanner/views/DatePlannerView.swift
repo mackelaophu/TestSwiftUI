@@ -17,7 +17,7 @@ struct DatePlannerView : View {
         List{
             ForEach(Period.allCases){period in
                 Section(content: {
-                    ForEach(eventData.sortedEvents(period: period), id: \.self){$event in
+                    ForEach(eventData.sortedEvents(period: period)){$event in
                         NavigationLink{
                             EventEditor(event: event, isEditting : true)
                         } label:{
