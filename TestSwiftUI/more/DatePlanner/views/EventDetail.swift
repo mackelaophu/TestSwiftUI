@@ -41,6 +41,12 @@ struct EventDetail: View {
             } .onDelete(perform: { indexSet in
                 event.tasks.remove(atOffsets: indexSet)
             })
+            Button {
+                event.tasks.append(EventTask(text: "", isNew: true))
+            } label: {
+                Label("Add", systemImage: "plus")
+            }
+            .buttonStyle(.borderless)
         }
     }
 }

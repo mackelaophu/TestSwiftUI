@@ -8,40 +8,49 @@
 import SwiftUI
 
 struct EventEditor: View {
-    @State var event: Event
+    @Binding var event: Event
     var isNew = false
-    let isEditting : Bool
+    @State private var isEditting : Bool = false
     @Environment(\.dismiss) private var dismiss
     @State private var eventCopy = Event()
     @EnvironmentObject var eventData : EventData
     var body: some View {
         EventDetail(event: $eventCopy, isEditting: isEditting)
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                if isNew {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-            }
-            ToolbarItem {
-                Button {
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
                     if isNew {
-                        eventData.events.append(eventCopy)
-                        dismiss()
+                        Button("Cancel") {
+                            dismiss()
+                        }
                     }
-                } label: {
-                    Text("Add")
                 }
+                ToolbarItem {
+                    Button {
+                        if isNew {
+                            eventData.events.append(eventCopy)
+                            dismiss()
+                        } else {
+                            if !isEditting {
+                                withAnimation {
+                                    event = eventCopy
+                                    isEditting.toggle()
+                                }
+                            } else {
+                                dismiss()
+                            }
+                        }
+                    } label: {
+                        Text( isNew ? "Add" : (isEditting ? "Done" : "Edit"))
+                    }
+                }
+            } .onAppear {
+                eventCopy = event
             }
-        } .onAppear {
-            eventCopy = event // Grab a copy in case we decide to make edits.
-        }
     }
 }
 
 struct EventEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        EventEditor(event: Event.example, isNew: true, isEditting: true)
+        EventEditor(event: .constant(Event.example), isNew: true)
     }
 }
